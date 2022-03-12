@@ -18,7 +18,7 @@ namespace GraphicsSystem
 		s_VAO = VoxelArray(MAX_VOXEL_PER_DRAW * 6 * 4);
 
 		s_VoxelShader = std::make_shared<Shader>("assets/shaders/VoxelShader.vert.glsl", "assets/shaders/VoxelShader.frag.glsl");
-		s_ActualLightSource = glm::vec3(0.0f, 0.0f, 0.0f);
+		s_ActualLightSource = glm::vec3(70.0f, 70.0f, 70.0f);
 	}
 
 	void Renderer::SetClearColor(float r, float g, float b, float a)
@@ -36,15 +36,14 @@ namespace GraphicsSystem
 		s_ActualLightSource = lightSource;
 	}
 
-	void Renderer::BeginVoxelScene(PerspectiveCamera& camera)
+	void Renderer::BeginVoxelScene(Camera& camera)
 	{
 		s_VoxelShader->Use();
 
 		s_VoxelShader->SetVec3("u_ViewPos", camera.GetPosition());
 		s_VoxelShader->SetVec3("u_LightPos", s_ActualLightSource);
 
-		s_VoxelShader->SetMat4("u_View", camera.GetViewMatrix());
-		s_VoxelShader->SetMat4("u_Projection", camera.GetProjectionMatrix());
+		s_VoxelShader->SetMat4("u_ViewProjection", camera.GetViewProjection());
 	}
 
 	void Renderer::EndVoxelScene()

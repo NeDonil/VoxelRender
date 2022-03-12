@@ -7,6 +7,7 @@
 namespace GraphicsSystem
 {
 	Scene::Scene(const std::string& path)
+		: m_MainCamera(Camera(90.0f, 1280.0f / 720.0f, 0.1f, 100.f))
 	{
 		auto chunks = VoxelReader::Reader::GetChunks(VoxelReader::Reader::ReadBytes(path));
 
@@ -22,7 +23,7 @@ namespace GraphicsSystem
 
 	void Scene::Draw()
 	{
-		Renderer::SetActualLightSource(m_LightSources[(int)(glfwGetTime()) % 4]);
+		Renderer::SetActualLightSource(m_LightSources[0]);
 
 		for (auto voxel : m_VoxelChunk->GetVoxels())
 		{
@@ -31,6 +32,11 @@ namespace GraphicsSystem
 
 			Renderer::DrawCube(voxel.y, voxel.z, voxel.x, glm::vec3(color.r, color.g, color.b));
 		}
+	}
+
+	void Scene::Update()
+	{
+		m_MainCamera.Update();
 	}
 
 }

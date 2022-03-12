@@ -2,7 +2,7 @@
 
 #include <GLAD/glad.h>
 #include "Shader.h"
-#include "PerspectiveCamera.h"
+#include "Camera.h"
 #include "VoxelArray.h"
 
 #include <unordered_map>
@@ -35,7 +35,7 @@ namespace GraphicsSystem
 		static void SetViewport(int x, int y, int width, int height);
 		static void SetActualLightSource(const glm::vec3& lightSource);
 
-		static void BeginVoxelScene(PerspectiveCamera& camera);
+		static void BeginVoxelScene(Camera& camera);
 		static void EndVoxelScene();
 		static void Flush();
 

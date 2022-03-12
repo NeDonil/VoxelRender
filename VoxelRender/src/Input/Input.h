@@ -46,6 +46,7 @@ namespace InputSystem
 		static double s_YMousePos;
 		static double s_YMouseOffset;
 
+		static double s_CurrentScroll;
 		static double s_ScrollOffset;
 
 		static uint8_t s_JoysticksCount;

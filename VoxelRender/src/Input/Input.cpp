@@ -10,6 +10,7 @@ namespace InputSystem
 	double Input::s_YMouseOffset = 0;
 
 	double Input::s_ScrollOffset = 0;
+	double Input::s_CurrentScroll = 0;
 
 	bool Input::s_Keys[512];
 	bool Input::s_MouseButtons[GLFW_MOUSE_BUTTON_LAST + 1];
@@ -82,7 +83,8 @@ namespace InputSystem
 
 	void Input::SetYMouseScrollOffset(double yoffset) 
 	{ 
-		s_ScrollOffset = yoffset; 
+		s_ScrollOffset = s_CurrentScroll - yoffset; 
+		s_CurrentScroll = yoffset;
 	}
 
 	void Input::UpdateGamepadStates()
