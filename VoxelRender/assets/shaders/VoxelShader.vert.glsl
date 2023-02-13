@@ -6,7 +6,8 @@ layout(location = 1) in vec3 a_Normal;
 layout(location = 2) in vec3 a_Translate;
 layout(location = 3) in vec3 a_Color;
 
-uniform mat4 u_ViewProjection;
+uniform mat4 u_View;
+uniform mat4 u_Projection;
 
 uniform int light_count;
 
@@ -30,5 +31,5 @@ void main()
 	v_FragPos = vec3(Model * vec4(a_Position, 1.0));
 	v_Color = a_Color;
 
-	gl_Position = u_ViewProjection * Model * vec4(a_Position, 1.0);
+	gl_Position = u_Projection * u_View * Model * vec4(a_Position, 1.0);
 }
