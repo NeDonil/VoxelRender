@@ -1,6 +1,6 @@
 # VoxelRender
 Voxel render for MagicaVoxel's models
-***
+
 ## Build
 
 ### Step 1 - Clone the repository
