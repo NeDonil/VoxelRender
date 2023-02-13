@@ -14,6 +14,7 @@ using namespace InputSystem;
 
 int main()
 {
+	system("dir");
 	Window window(1280, 720, "Editor");
 	window.SetVSync(0);
 
