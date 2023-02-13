@@ -5,8 +5,6 @@
 #include <VoxelReader/Chunks/PaletteChunk.h>
 #include <VoxelReader/Reader.h>
 
-#include <Graphics/Camera.h>
-
 #include <string>
 #include <vector>
 
@@ -20,17 +18,12 @@ namespace GraphicsSystem
 		Scene() = default;
 		Scene(const std::string& path);
 
-		Camera& const GetCamera() { return m_MainCamera; }
-
 		void AddLightSource(const glm::vec3& lightSource);
 		void Draw();
-
-		void Update();
 
 		~Scene() = default;
 
 	private:
-		Camera m_MainCamera;
 		std::vector<glm::vec3> m_LightSources;
 
 		std::shared_ptr<VoxelReader::SizeChunk> m_SizeChunk;

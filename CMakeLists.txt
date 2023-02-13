@@ -16,8 +16,8 @@ include_directories(
     VoxelRender/vendor/Glad/include)
 
 add_executable(VoxelRender
-    VoxelRender/src/Graphics/Camera.cpp
-    VoxelRender/src/Graphics/Camera.h
+    VoxelRender/src/Graphics/PerspectiveCamera.cpp
+    VoxelRender/src/Graphics/PerspectiveCamera.h
     VoxelRender/src/Graphics/Renderer.cpp
     VoxelRender/src/Graphics/Renderer.h
     VoxelRender/src/Graphics/Scene.cpp
