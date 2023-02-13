@@ -1,0 +1,6 @@
+[submodule "VoxelRender/vendor/glfw"]
+	path = VoxelRender/vendor/glfw
+	url = https://github.com/glfw/glfw
+[submodule "VoxelRender/vendor/glm"]
+	path = VoxelRender/vendor/glm
+	url = https://github.com/g-truc/glm
