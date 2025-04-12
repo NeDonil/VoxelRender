@@ -4,7 +4,7 @@ Voxel render for MagicaVoxel's models
 ## Build
 
 ### Step 1 - Clone the repository
-```git clone --recursive https://github.com/NeDonil/VoxelRender```
+```git clone --recursive git@github.com:NeDonil/VoxelRender.git```
 
 ### Step 2 - Run setup.bat and build project
 ```bat
